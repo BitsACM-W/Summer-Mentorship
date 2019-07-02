@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+	<div class="post">
+		<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.author|linebreaksbr }}</a></h2>
+		<div class="date">
+			<p>published: {{ post.published_date }}</p>
+		</div>
+	</div>
+<div class="nxtbtn">
+		<button type="button" class="btn btn-success" style="width: 400px; height: 100px;font-size : 500px;"><a href="{% url 'login' %}"><h4>LogIn</h4></a></button>
+	</div>
+{% endfor %}
+{% endblock %}
